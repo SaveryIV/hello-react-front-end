@@ -20,7 +20,10 @@ const Greeting = () => {
 
   return (
     <div>
-      <h2>Greeting: {greeting}</h2>
+      <h2>
+        Greeting:
+        {greeting}
+      </h2>
       {/* Additional JSX for your component */}
     </div>
   );

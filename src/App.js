@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+// src/Greeting.js
+import React, { useEffect, useState } from 'react';
 
-function App() {
+const Greeting = () => {
+  const [greeting, setGreeting] = useState('');
+
+  useEffect(() => {
+    const fetchGreeting = async () => {
+      try {
+        const response = await fetch('http://localhost:3001/random_greeting');
+        const data = await response.json();
+        setGreeting(data.greeting); // Assuming the API response has a 'greeting' property
+      } catch (error) {
+      }
+    };
+
+    // Call the fetchGreeting function
+    fetchGreeting();
+  }, []); // The empty dependency array ensures that the effect runs only once
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h2>Greeting: {greeting}</h2>
+      {/* Additional JSX for your component */}
     </div>
   );
-}
+};
 
-export default App;
+export default Greeting;

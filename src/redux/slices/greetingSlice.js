@@ -1,10 +1,18 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import api from '../../services/api';
 
-export const fetchRandomGreeting = createAsyncThunk('greetings/fetchRandomGreeting', async () => {
-  const response = await api.get('/greetings/random');
-  return response.data.message;
-});
+export const fetchRandomGreeting = createAsyncThunk(
+  'greetings/fetchRandomGreeting',
+  async () => {
+    try {
+      const response = await api.get();
+      return response.data.message;
+    } catch (error) {
+      console.error('Error :', error);
+      throw error;
+    }
+  },
+);
 
 const greetingSlice = createSlice({
   name: 'greetings',

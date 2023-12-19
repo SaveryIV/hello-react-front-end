@@ -28,7 +28,7 @@ The **Hello React Front-End** is a student project. The goal is to integrate the
 
 While there are different ways to achieve this, in **Hello React Front-End** I create two separate apps (React front-end with a Rails back-end) and connect them to display a random message.
 
-This repo consumes API data from [Hello Rails Back-End](https://github.com/SaveryIV/hello-rails-back-end) project.
+This repo consumes API data from [Hello Rails Back-End](https://github.com/SaveryIV/hello-rails-back-end/tree/api-setup) project.
 
 ## 🛠 Built With <a name="built-with"></a>
 

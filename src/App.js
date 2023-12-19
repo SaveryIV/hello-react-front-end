@@ -11,6 +11,7 @@ const Greeting = () => {
         const data = await response.json();
         setGreeting(data.greeting); // Assuming the API response has a 'greeting' property
       } catch (error) {
+        console.log(error);
       }
     };
 
